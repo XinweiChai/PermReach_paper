@@ -458,7 +458,9 @@ To validate PermReach, we use a small model: $\lambda$-phage model~\cite{thieffr
 Big networks TCR and EGFR are already tested by Folschette \textit{et al.} modeling in Asynchronous Automata Network with priority~\cite{folschette2015}. 
 In the TCR tests, PermReach gives exactly the same result as~\cite{folschette2015} did as there is no inconclusive cases. As for EGFR tests, PermReach shows also full conclusiveness while Asynchronous Automata Network with priority does not.
 
-We have developed another reachability analyzer ASPReach using Answer Set Programming~\cite{chai2018reach}.
+We have developed another reachability analyzer: ASPReach~\cite{chai2018reach}. 
+It uses Answer Set Programming (ASP)~\cite{baral2003knowledge} to search all the possible sequences of the local states in the SLCG instead of searching among permutations to approach exact reachability.
+ASPReach is a more conclusive analyzer than PermReach as it covers already all the possible permutations but requires more runtime.
 
 \begin{table}[ht]
 \centering
@@ -581,7 +583,7 @@ The heuristics PermReach reproduces the system dynamics by searching admissible 
 The benchmarks display its conclusiveness and efficiency.
 
 The computation of permutations could however be heavy in the networks bigger than the tests in this paper and is still not fully conclusive. 
-To speed up the whole procedure and improve the conclusiveness, we thus plan to apply SAT (Satisfiability) solvers or Answer Set Programming (ASP) to refine the analysis of transition orders. 
+To speed up the whole procedure and improve the conclusiveness, we thus plan to apply SAT (Satisfiability) solvers to refine the analysis of transition orders. 
 In addition, we may consider an extension of PermReach to multivalued models.
 
 
